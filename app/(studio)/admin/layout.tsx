@@ -1,7 +1,5 @@
-import '../globals.css'
-
 export const metadata = {
-  title: 'Petow@apos;s Pantry',
+  title: 'Petows Pantry',
   description: 'For all your baking needs',
 }
 

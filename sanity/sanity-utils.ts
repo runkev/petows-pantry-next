@@ -1,7 +1,7 @@
 import { Recipe } from "@/types/Recipe";
 import { Page } from "@/types/Page";
 import { createClient, groq } from "next-sanity";
-import clientConfig from './config/client-config'
+import clientConfig from './config/client.config'
 
 export async function getRecipes(): Promise<Recipe[]> {
   return createClient(clientConfig).fetch(
