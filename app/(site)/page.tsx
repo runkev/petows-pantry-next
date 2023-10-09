@@ -10,8 +10,8 @@ export default async function Home() {
       <h1 className="">Hello I&apos;m
         <span className=""> Kapehe!</span>
       </h1>
-      <p className="">Aloha everyone! Check out my recipes!</p>
-      <h2 className="">My recipes</h2>
+      <p className="mt-3 text-xl text-gray-600">Check out my recipes!</p>
+      <h2 className="mt-24 font-bold text-gray-700 text-3xl">My recipes</h2>
 
       <div className="">
         {recipes.map((recipe) => (

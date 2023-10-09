@@ -9,6 +9,21 @@ const project = {
         type: "string",
       },
       {
+        name: "prep time",
+        title: "Prep Time",
+        type: "string"
+      },
+      {
+        name: "cook time",
+        title: "Cook Time",
+        type: "string"
+      },
+      {
+        name: "total time",
+        title: "Total Time",
+        type: "string"
+      },
+      {
         name: "slug",
         title: "Slug",
         type: "slug",
