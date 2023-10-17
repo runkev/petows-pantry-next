@@ -9,17 +9,17 @@ const project = {
         type: "string",
       },
       {
-        name: "prep time",
+        name: "preptime",
         title: "Prep Time",
         type: "string"
       },
       {
-        name: "cook time",
+        name: "cooktime",
         title: "Cook Time",
         type: "string"
       },
       {
-        name: "total time",
+        name: "totaltime",
         title: "Total Time",
         type: "string"
       },
