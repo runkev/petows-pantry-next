@@ -22,6 +22,9 @@ export async function getRecipe(slug: string): Promise<Recipe> {
       _id,
       _createdAt,
       name,
+      preptime,
+      cooktime,
+      totaltime,
       "slug": slug.current,
       "image": image.asset->url,
       content
