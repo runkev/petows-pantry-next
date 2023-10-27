@@ -1,3 +1,5 @@
+"use client"
+
 import recipe1 from '../../assets/recipe1.jpg'
 import recipe2 from '../../assets/recipe2.jpg'
 import recipe3 from '../../assets/recipe3.jpg'
@@ -7,7 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react';
 
-export default async function Home() {
+export default function Home() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   return (
