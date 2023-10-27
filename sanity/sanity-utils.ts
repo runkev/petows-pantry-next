@@ -1,5 +1,6 @@
 import { Recipe } from "@/types/Recipe";
 import { Page } from "@/types/Page";
+import { TopRecipe } from "@/types/TopRecipe";
 import { createClient, groq } from "next-sanity";
 import clientConfig from './config/client.config'
 
@@ -30,6 +31,20 @@ export async function getRecipe(slug: string): Promise<Recipe> {
       content
     }`,
     { slug }
+  )
+}
+
+export async function getTopRecipes(): Promise<TopRecipe[]>{
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "toprecipe"]{
+      _id,
+      "recipe": recipe->{
+        _id,
+        name,
+        "slug": slug.current,
+        "image": image.asset->url,
+      }
+    }`
   )
 }
 

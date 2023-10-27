@@ -4,13 +4,23 @@ import recipe1 from '../../assets/recipe1.jpg'
 import recipe2 from '../../assets/recipe2.jpg'
 import recipe3 from '../../assets/recipe3.jpg'
 import Banner from "@/components/banner";
-import { getRecipes } from "@/sanity/sanity-utils"
+import { getTopRecipes } from "@/sanity/sanity-utils"
+import { TopRecipe } from '@/types/TopRecipe';
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { FaInstagram } from 'react-icons/fa';
 
 export default function Home() {
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [topRecipes, setTopRecipes] = useState<TopRecipe[]>([]);
+
+  useEffect(() => {
+    async function fetchTopRecipes() {
+      const topRecipes = await getTopRecipes();
+      setTopRecipes(topRecipes);
+    }
+    fetchTopRecipes();
+  }, []);
 
   return (
     <div className="bg-cream min-h-screen">
@@ -23,16 +33,26 @@ export default function Home() {
         <h1>MOST POPULAR</h1>
       </div>
 
-      
       <div className="flex flex-wrap justify-center gap-4 mt-2">
-          <Link href={`/recipes/${recipe.slug}`}>
-            <Image              
-              src={recipe1}
-              alt='Recipe 1'
-              className=''
-            />          
-          </Link>
-        </div>
+        {topRecipes.map((recipe) => (
+          <div key={recipe._id} className='hover:scale-105'>
+            <Link href={`/recipes/${recipe.recipe.slug}`} >
+              <div className="h-64 w-80 overflow-hidden drop-shadow-2xl">
+                <Image
+                  src={recipe.recipe.image}
+                  alt='Recipe'
+                  width={80}
+                  height={64}
+                  className="w-full h-full object-cover"
+                  unoptimized={true}
+                  priority={true}
+                />
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
+
 
         <a
           href="https://www.instagram.com/kevinpetow"
