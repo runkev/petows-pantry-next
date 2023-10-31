@@ -6,5 +6,8 @@ export type Recipe = {
   name: string;
   slug: string;
   image: string;
+  cooktime: string;
+  preptime: string;
+  totaltime: string;
   content: PortableTextBlock[];
 }

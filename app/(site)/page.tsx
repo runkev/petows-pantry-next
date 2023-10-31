@@ -1,8 +1,5 @@
 "use client"
 
-import recipe1 from '../../assets/recipe1.jpg'
-import recipe2 from '../../assets/recipe2.jpg'
-import recipe3 from '../../assets/recipe3.jpg'
 import Banner from "@/components/banner";
 import { getTopRecipes } from "@/sanity/sanity-utils"
 import { TopRecipe } from '@/types/TopRecipe';
@@ -34,12 +31,12 @@ export default function Home() {
       </div>
 
       <div className="flex flex-wrap justify-center gap-4 mt-2">
-        {topRecipes.map((recipe) => (
-          <div key={recipe._id} className='hover:scale-105'>
-            <Link href={`/recipes/${recipe.recipe.slug}`} >
+        {topRecipes.map((toprecipe) => (
+          <div key={toprecipe._id} className='hover:scale-105'>
+            <Link href={`/recipes/${toprecipe.recipe.slug}`} >
               <div className="h-64 w-80 overflow-hidden drop-shadow-2xl">
                 <Image
-                  src={recipe.recipe.image}
+                  src={toprecipe.recipe.image}
                   alt='Recipe'
                   width={80}
                   height={64}
@@ -48,6 +45,7 @@ export default function Home() {
                   priority={true}
                 />
               </div>
+              <h1 className="text-center font-bold uppercase">{toprecipe.recipe.name}</h1>
             </Link>
           </div>
         ))}

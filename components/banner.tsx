@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import brownies_tray from '../assets/brownies_tray.jpg';
 
 interface BannerProps {
     title: string;
@@ -13,7 +12,7 @@ interface BannerProps {
 const Banner = ({ title, subtitle, prepTime, bakeTime, totalTime }: BannerProps) => {
   return (
     <div className="relative flex justify-center items-center h-52 border-solid border-cookie border-y-4 bg-cover bg-no-repeat"
-         style={{ backgroundImage: `url(${brownies_tray})` }}
+         style={{ backgroundImage: `url('/assets/brownies_tray.jpg')` }}
     >
         <div className="absolute inset-0 flex flex-col justify-center items-center">
             <h1 className="text-4xl font-bold text-center text-white mb-2 px-2 uppercase">

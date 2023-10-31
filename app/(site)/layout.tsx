@@ -2,7 +2,6 @@ import '../globals.css'
 import Link from "next/link"
 import { getPages } from '@/sanity/sanity-utils';
 import React, { useEffect, useState } from 'react';
-import chef_icon from '../../assets/chef_icon.png'
 import Image from 'next/image';
 
 export const metadata = {
@@ -19,17 +18,19 @@ export default async function RootLayout({
   return (
   <html>
     {/* put google analytics here */}
-    <body>
-      <nav className="bg-cream py-4 font-hk-grotesk uppercase font-bold mx-auto">
+    <body className='font-hk-grotesk'>
+      <nav className="bg-cream py-4 uppercase font-bold mx-auto">
         <div className="mx-auto flex justify-between rounded-lg">
           <Link
             href="/"
             className=" text-gray-800 hover:drop-shadow-2xl"
           >
             <Image
-              src={chef_icon}
+              src={'/assets/chef_icon.png'}
               alt="home"
               className="h-6 w-5 mr-2 ml-4"
+              width={24}
+              height={24}
             ></Image>
           </Link>
           <Link
