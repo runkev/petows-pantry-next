@@ -43,6 +43,23 @@ const project = {
         ]
       },
       {
+        name: 'ingredients',
+        type: 'array',
+        title: 'Ingredients',
+        of: [
+          {
+            type: 'object',
+            name: 'ingredient',
+            title: 'Ingredient',
+            fields: [
+              { name: 'name', type: 'string', title: 'Ingredient Name' },
+              { name: 'quantityEnglish', type: 'string', title: 'Quantity (English)' },
+              { name: 'quantityMetric', type: 'string', title: 'Quantity (Metric)' }
+            ]
+          }
+        ]
+      },
+      {
         name: "content",
         title: "Content",
         type: "array",

@@ -10,7 +10,14 @@ interface BannerProps {
 }
 
 const Banner = ({ title, subtitle, prepTime, bakeTime, totalTime }: BannerProps) => {
-  return (
+  
+    const timeTypes = [
+        { label: "Prep Time", value: prepTime },
+        { label: "Bake Time", value: bakeTime },
+        { label: "Total Time", value: totalTime }
+    ]; 
+  
+    return (
     <div className="relative flex justify-center items-center h-52 border-solid border-cookie border-y-4 bg-cover bg-no-repeat"
          style={{ backgroundImage: `url('/assets/brownies_tray.jpg')` }}
     >
@@ -23,20 +30,14 @@ const Banner = ({ title, subtitle, prepTime, bakeTime, totalTime }: BannerProps)
                     {subtitle}
                 </p>
             )}
-            {prepTime && bakeTime && totalTime && (
+            {timeTypes.every(time => time.value) && (
                 <div className="grid grid-cols-3 justify-center mt-4 text-xs md:px-32 sm:px-32 xs:px-16">
-                    <div className="border border-black border-solid rounded-lg mx-1 bg-cream">
-                        <h3 className="font-semibold text-center">Prep Time</h3>
-                        <p className="text-center">{prepTime} min</p>
-                    </div>
-                    <div className="border border-black border-solid rounded-lg mx-1 bg-cream">
-                        <h3 className="font-semibold text-center">Bake Time</h3>
-                        <p className="text-center">{bakeTime} min</p>
-                    </div>
-                    <div className="border border-black border-solid rounded-lg mx-1 bg-cream">
-                        <h3 className="font-semibold text-center">Total Time</h3>
-                        <p className="text-center">{totalTime} min</p>
-                    </div>
+                    {timeTypes.map((time, index) => (
+                        <div key={index} className="border border-black border-solid rounded-lg mx-1 bg-cream p-1">
+                            <h3 className="font-semibold text-center">{time.label}</h3>
+                            <p className="text-center">{time.value}</p>
+                        </div>
+                    ))}
                 </div>
             )}
         </div>

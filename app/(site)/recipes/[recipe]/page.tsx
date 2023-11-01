@@ -7,6 +7,8 @@ type Props = {
   params: { recipe: string }
 }
 
+
+
 export default async function Recipe({ params }: Props) {
   const slug = params.recipe;
   const recipe = await getRecipe(slug);
