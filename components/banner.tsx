@@ -35,7 +35,7 @@ const Banner = ({ title, subtitle, prepTime, bakeTime, totalTime }: BannerProps)
                     {timeTypes.map((time, index) => (
                         <div key={index} className="border border-black border-solid rounded-lg mx-1 bg-cream p-1">
                             <h3 className="font-semibold text-center">{time.label}</h3>
-                            <p className="text-center">{time.value}</p>
+                            <p className="text-center">{time.value} min</p>
                         </div>
                     ))}
                 </div>
