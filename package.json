@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@portabletext/react": "^3.0.9",
+    "@tailwindcss/typography": "^0.5.10",
     "next": "^13.5.4",
     "next-sanity": "^5.5.4",
     "react": "^18",

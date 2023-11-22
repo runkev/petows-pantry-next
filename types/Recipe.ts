@@ -9,5 +9,11 @@ export type Recipe = {
   cooktime: string;
   preptime: string;
   totaltime: string;
-  content: PortableTextBlock[];
+  ingredients: {
+    name: string;
+    quantityEnglish: string;
+    quantityMetric: string;
+  }[];
+  contentenglish: PortableTextBlock[];
+  contentmetric: PortableTextBlock[];
 }

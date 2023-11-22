@@ -60,8 +60,14 @@ const project = {
         ]
       },
       {
-        name: "content",
-        title: "Content",
+        name: "contentenglish",
+        title: "Content (English)",
+        type: "array",
+        of: [{ type: "block" }]
+      },
+      {
+        name: "contentmetric",
+        title: "Content (Metric)",
         type: "array",
         of: [{ type: "block" }]
       }

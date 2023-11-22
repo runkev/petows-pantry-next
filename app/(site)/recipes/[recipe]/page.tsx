@@ -13,7 +13,7 @@ type Props = {
 
 export default function Recipe({ params }: Props) {
   const [isMetric, setIsMetric] = useState(false)
-  const [recipe, setRecipe] = useState<Recipe[]>([])
+  const [recipe, setRecipe] = useState<Recipe>()
   
   const slug = params.recipe;
 
@@ -29,6 +29,10 @@ export default function Recipe({ params }: Props) {
 
     fetchData();
   }, []);
+
+  if (!recipe) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
@@ -78,12 +82,12 @@ export default function Recipe({ params }: Props) {
                 </label>
               </div>
               <ul className="mt-2">
-                {ingredients.map((ingredient, index) => (
+                {recipe.ingredients.map((ingredient, index) => (
                   <li key={index} className="mb-1">
                     <strong>
                       {isMetric
-                        ? ingredient.metricUnit
-                        : ingredient.englishUnit}
+                        ? ingredient.quantityMetric
+                        : ingredient.quantityEnglish}
                     </strong>{" "}
                     {ingredient.name}
                   </li>
@@ -91,7 +95,10 @@ export default function Recipe({ params }: Props) {
               </ul>
             </div>
         </div>
-        <PortableText value={recipe.content} />
+        <div className="mx-2 mt-2">
+          <h2 className="font-bold text-xl underline">DIRECTIONS</h2>
+        <PortableText value={isMetric ? recipe.contentmetric : recipe.contentenglish} />
+        </div>
       </div>
 
     </div>
