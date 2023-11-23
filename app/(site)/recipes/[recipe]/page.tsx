@@ -28,7 +28,7 @@ export default function Recipe({ params }: Props) {
     }
 
     fetchData();
-  }, []);
+  }, [slug]);
 
   if (!recipe) {
     return <div className="bg-cream min-h-screen min-w-full font-hk-grotesk">Loading...</div>;
