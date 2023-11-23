@@ -47,7 +47,7 @@ export default function Recipes() {
 
                 <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                 {filteredRecipes.map((recipe) => (
-                    <div>
+                    <div key={recipe.slug}>
                         <li className="mb-4 flex justify-center hover:scale-105">
                             <Link href={`/recipes/${recipe.slug}`}>
                                 <div className="bg-cookie border border-gray-300 rounded-lg overflow-hidden w-64 h-48 drop-shadow-lg flex flex-col">
