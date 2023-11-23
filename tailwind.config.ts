@@ -37,6 +37,13 @@ const config: Config = {
         //more narrow 3 columns
         '3s': 'repeat(3, minmax(0, 100px))',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+          }
+        }
+      }
     },
   },
   plugins: [

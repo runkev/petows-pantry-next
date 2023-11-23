@@ -31,11 +31,11 @@ export default function Recipe({ params }: Props) {
   }, []);
 
   if (!recipe) {
-    return <div>Loading...</div>;
+    return <div className="bg-cream min-h-screen min-w-full font-hk-grotesk">Loading...</div>;
   }
 
   return (
-    <div>
+    <div className="bg-cream">
       <Banner 
           title={recipe.name}
           prepTime={recipe.preptime}
@@ -46,8 +46,13 @@ export default function Recipe({ params }: Props) {
       <div className="mx-auto my-2 py-2 flex flex-col max-w-5xl border-solid border-2 border-cookie">
         <div className="flex flex-col md:flex-row gap-4 justify-between">
 
-          <div className="overflow-hidden drop-shadow-2xl max-w-md md:order-2 mx-2 rounded-lg">
-            <Image src={recipe.image} alt={recipe.name} width={1920} height={1080} className="" />
+          <div className="overflow-hidden drop-shadow-2xl mx-4 md:max-w-md md:order-2 rounded-lg">
+            <Image 
+              src={recipe.image} 
+              alt={recipe.name} 
+              width={1920} 
+              height={1080} 
+            />
           </div>
 
           <div className="md:order-1 mx-2">
@@ -81,7 +86,7 @@ export default function Recipe({ params }: Props) {
                   </span>
                 </label>
               </div>
-              <ul className="mt-2">
+              <ul className="mt-2 list-disc list-inside">
                 {recipe.ingredients.map((ingredient, index) => (
                   <li key={index} className="mb-1">
                     <strong>
@@ -95,9 +100,9 @@ export default function Recipe({ params }: Props) {
               </ul>
             </div>
         </div>
-        <div className="mx-2 mt-2">
+        <div className="mx-2 mt-2 prose">
           <h2 className="font-bold text-xl underline">DIRECTIONS</h2>
-        <PortableText value={isMetric ? recipe.contentmetric : recipe.contentenglish} />
+          <PortableText value={isMetric ? recipe.contentmetric : recipe.contentenglish}/>
         </div>
       </div>
 

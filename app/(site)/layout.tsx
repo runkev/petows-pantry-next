@@ -42,7 +42,7 @@ export default async function RootLayout({
           {/* Nav Links */}
           <div className="flex items-center ml-0 mr-4 space-x-4">
             <Link
-              href={"/recipes"}
+              href={"/allrecipes"}
               className="text-gray-800 hover:text-cookie hover:drop-shadow-2xl rounded-md"
             >
               Recipes
