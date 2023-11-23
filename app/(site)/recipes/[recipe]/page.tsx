@@ -46,7 +46,7 @@ export default function Recipe({ params }: Props) {
       <div className="mx-auto my-2 py-2 flex flex-col max-w-5xl border-solid border-2 border-cookie">
         <div className="flex flex-col md:flex-row gap-4 justify-between">
 
-          <div className="overflow-hidden drop-shadow-2xl mx-4 md:max-w-md md:order-2 rounded-lg">
+          <div className="overflow-hidden drop-shadow-2xl mx-16 md:max-w-md md:order-2 rounded-lg">
             <Image 
               src={recipe.image} 
               alt={recipe.name} 

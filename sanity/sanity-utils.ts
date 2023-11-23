@@ -12,7 +12,6 @@ export async function getRecipes(): Promise<Recipe[]> {
       name,
       "slug": slug.current,
       "image": image.asset->url,
-      content
     }`
   )
 }

@@ -19,6 +19,7 @@ export default function Recipes() {
         async function fetchData() {
             const recipeContent = await getRecipes();
             setRecipes(recipeContent);
+            console.log(recipeContent);
         }
 
         fetchData();
@@ -44,14 +45,13 @@ export default function Recipes() {
                     />
                 </div>
 
-                <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                 {filteredRecipes.map((recipe) => (
-                    // <RecipeListCard key={recipe.id} recipe={recipe} />
                     <div>
                         <li className="mb-4 flex justify-center hover:scale-105">
                             <Link href={`/recipes/${recipe.slug}`}>
                                 <div className="bg-cookie border border-gray-300 rounded-lg overflow-hidden w-60 h-60 drop-shadow-lg flex flex-col">
-                                <Image src={recipe.image} alt={recipe.name} width={1920} height={1080} className="object-cover h-full" />
+                                <Image src={recipe.image} alt={recipe.name} width={1920} height={1080} className="object-cover h-5/6" />
                                 <div className="flex-grow flex items-center justify-center">
                                     <h2 className="text-md font-semibold text-center whitespace-nowrap overflow-hidden overflow-ellipsis">
                                     {recipe.name}
