@@ -6,7 +6,12 @@ function Logo(props: any) {
     const { renderDefault, title } = props;
 
   return (
-    <div className="flex items-center space-x-2">
+    // <div className="flex items-center space-x-2">
+    <div style={{
+        display: 'flex', 
+        alignItems: 'center', 
+        gap: '0.5rem'}} 
+    >
         <Image
             src={logo}
             alt="Logo"
