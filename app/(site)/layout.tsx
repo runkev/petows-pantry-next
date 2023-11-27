@@ -3,6 +3,7 @@ import Link from "next/link"
 import { getPages } from '@/sanity/sanity-utils';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Script from 'next/script';
 
 export const metadata = {
   title: "Petow's Pantry",
@@ -16,8 +17,15 @@ export default async function RootLayout({
 }) {
 
   return (
-  <html>
-    {/* put google analytics here */}
+  <html lang="en">
+S   <Script async src="https://www.googletagmanager.com/gtag/js?id=G-D5LVJY5PQY"></Script>
+    <Script id="gtag-init" strategy="afterInteractive">
+      {`window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-D5LVJY5PQY');`}
+    </Script>
     <body className='font-hk-grotesk'>
       <nav className="bg-cream py-4 uppercase font-bold mx-auto">
         <div className="mx-auto flex justify-between rounded-lg">
