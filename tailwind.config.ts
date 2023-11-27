@@ -27,6 +27,7 @@ const config: Config = {
 
       colors: {
         'cookie': '#DEA668',
+        'pantrybrown': '#67594E',
       },
 
       fontFamily: {
