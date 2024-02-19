@@ -27,8 +27,8 @@ export default async function RootLayout({
 
       gtag('config', 'G-D5LVJY5PQY');`}
     </Script>
-    <body className='font-hk-grotesk'>
-      <nav className="bg-cream py-4 uppercase font-bold mx-auto">
+    <body className='font-hk-grotesk bg-cream'>
+      <nav className="py-4 uppercase font-bold mx-auto">
         <div className="mx-auto flex justify-between rounded-lg">
           <Link
             href="/"
