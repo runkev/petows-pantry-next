@@ -6,6 +6,7 @@ import { PortableText } from '@portabletext/react';
 import Image from "next/image"
 import { useEffect, useState } from "react";
 import { Recipe } from "@/types/Recipe";
+import ScreenWakeLockToggle from "@/components/screenOnToggle";
 
 type Props = {
   params: { recipe: string }
@@ -56,7 +57,10 @@ export default function Recipe({ params }: Props) {
           </div>
 
           <div className="md:order-1 mx-2">
+            <div className="lg:flex justify-between items-center w-full">
               <h2 className="font-bold text-xl underline">INGREDIENTS</h2>
+              <ScreenWakeLockToggle />
+            </div>
               <div className="flex items-center mt-2">
                 <p className="mr-2">Change units:</p>
                 <label
@@ -71,13 +75,13 @@ export default function Recipe({ params }: Props) {
                     className="hidden"
                   />
                   <span
-                    className={`relative w-10 h-6 rounded-full bg-gray-300 transition-colors ease-in-out duration-200 ${
+                    className={`relative w-10 h-6 rounded-full transition-colors ease-in-out duration-200 ${
                       isMetric ? "bg-green-500" : "bg-blue-500"
                     }`}
                   >
                     <span
                       className={`inline-block w-4 h-4 transform translate-x-0.5 translate-y-0.5 rounded-full bg-white shadow ease-in-out duration-200 ${
-                        isMetric ? "translate-x-4" : "translate-x-0"
+                        isMetric ? "translate-x-5" : "translate-x-0"
                       }`}
                     ></span>
                   </span>
