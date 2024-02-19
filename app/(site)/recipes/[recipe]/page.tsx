@@ -44,7 +44,7 @@ export default function Recipe({ params }: Props) {
           totalTime={recipe.totaltime}
       />
 
-      <div className="mx-auto my-2 py-2 flex flex-col max-w-5xl border-solid border-2 border-cookie">
+      <div className="mx-auto my-2 py-2 flex flex-col max-w-5xl ">
         <div className="flex flex-col md:flex-row gap-4 justify-between">
 
           <div className="overflow-hidden drop-shadow-2xl mx-16 md:max-w-md md:order-2 rounded-lg">
@@ -57,7 +57,7 @@ export default function Recipe({ params }: Props) {
           </div>
 
           <div className="md:order-1 mx-2">
-            <div className="lg:flex justify-between items-center w-full">
+            <div className="">
               <h2 className="font-bold text-xl underline">INGREDIENTS</h2>
               <ScreenWakeLockToggle />
             </div>

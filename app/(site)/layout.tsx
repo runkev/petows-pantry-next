@@ -4,6 +4,7 @@ import { getPages } from '@/sanity/sanity-utils';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Script from 'next/script';
+import Footer from '@/components/Footer';
 
 export const metadata = {
   title: "Petow's Pantry",
@@ -68,6 +69,7 @@ export default async function RootLayout({
 
       </div>
       <main>{children}</main>
+      <Footer />
     </body>
   </html>
 

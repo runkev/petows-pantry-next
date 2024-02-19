@@ -16,16 +16,6 @@ export default async function Page({ params }: Props) {
           title={page.title}
       />
       <div className="prose container mx-auto px-4 py-4 max-w-5xl"><PortableText value={page.content} /></div>
-      <div>
-        <a
-            href="https://www.instagram.com/kevinpetow"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-800 hover:text-cookie flex justify-center my-8"
-          >
-            <FaInstagram className="inline-block w-6 h-6 mr-1" />
-          </a>
-      </div>
     </div>
   )
 }
